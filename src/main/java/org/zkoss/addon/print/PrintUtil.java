@@ -17,7 +17,7 @@ public class PrintUtil {
 	/**
 	 * The specific component to print with custom print CSS style or template ZUL page
 	 * @param comp any ZK component
-	 * @param uri the path to the CSS file
+	 * @param cssuri the path to the CSS file
 	 */
 	public static void print(Component comp, String cssuri) {
 		print(comp, Executions.encodeURL("~./js/print/template.zul"), cssuri);
