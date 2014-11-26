@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<config-name>print</config-name>
+	<depends>zk</depends>
+
+	<version>
+		<version-class>org.zkoss.addon.print.Version</version-class>
+		<version-uid>0.8.0</version-uid>
+	</version>
+</config>

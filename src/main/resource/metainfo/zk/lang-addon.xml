@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<language-addon>
+	<addon-name>zkprint</addon-name>
+	<depends>zk</depends>
+	<language-name>xul/html</language-name>
+
+	<version>
+		<version-class>org.zkoss.addon.print.Version</version-class>
+		<version-uid>0.8.0</version-uid>
+		<zk-version>7.0.0</zk-version>
+	</version>
+
+	<javascript package="print"/>
+</language-addon>

@@ -1,0 +1,140 @@
+<?link rel="stylesheet" type="text/css" href="/css/style.css"?>
+<zk xmlns:n="native">
+	<borderlayout hflex="1"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('org.zkoss.print.PrintViewModel')">
+		<north>
+			<n:div id="header">
+				<n:div id="header-title">
+					<n:div id="header-logo">
+						<n:a title="ZK Home" href="#" />
+					</n:div>
+				</n:div>
+			</n:div>
+		</north>
+		<west width="200px">
+			<menubar orient="vertical" hflex="1">
+				<menu label="Section 1">
+					<menupopup>
+						<menuitem label="Page 1" />
+						<menuitem label="Page 2" />
+					</menupopup>
+				</menu>
+				<menu label="Section 2">
+					<menupopup>
+						<menuitem label="Page 1" />
+						<menuitem label="Page 2" />
+					</menupopup>
+				</menu>
+			</menubar>
+		</west>
+		<center>
+			<vlayout vflex="1">
+				<menubar>
+					<menuitem label="Save" />
+					<menuitem label="Update" />
+					<menuitem label="Delete" />
+					<menu label="Report">
+						<menupopup>
+							<menuitem label="Normal View" onClick="@command('generateView', mode='normal')" />
+							<menuitem label="Print View" onClick="@command('generateView', mode='print')" />
+						</menupopup>
+					</menu>
+					<menuitem label="Print" disabled="@load(not vm.printView)" onClick="@command('print')" />
+				</menubar>
+				<div vflex="1" style="overflow: auto;">
+					<div id="printViewPort" style="padding: 0 5px;">
+						<vlayout>
+							<div sclass="printHeader" visible="@load(vm.printView)">
+								<n:div class="logo">
+									Company Logo
+								</n:div>
+								<n:div class="title">
+									Report Title
+								</n:div>
+								<n:div class="text">
+									Report Date: 2014/12/31
+								</n:div>
+							</div>
+							<div id="content">
+								<vlayout>
+									<hlayout>
+										<vlayout hflex="1">
+											<label value="Ratio Analysis" style="font-size: 16px" />
+											<grid>
+												<columns>
+													<column label="Line item" hflex="2" style="text-align: center" />
+													<column label="Beginning of Year" hflex="1" style="text-align: center" align="right" />
+												</columns>
+												<rows>
+													<row>
+														<label value="Inventory" />
+														<label value="$12,500" />
+													</row>
+													<row>
+														<label value="Total assets" />
+														<label value="$120,000" />
+													</row>
+													<row>
+														<label value="Owners' equity" />
+														<label value="$29,000" />
+													</row>
+													<row>
+														<label value="Number of common shares" />
+														<label value="25,000" />
+													</row>
+												</rows>
+											</grid>
+										</vlayout>
+										<charts width="400" height="185" type="pie" title=""
+											model="@load(vm.chartDataModel)" legend="@load(vm.chartLegend)"
+											exporting="@load(vm.chartExporting)" plotOptions="@load(vm.chartOptions)" />
+									</hlayout>
+									<grid model="@load(vm.gridDataModel)">
+										<columns>
+											<column label="Line item" hflex="min" style="text-align: center" />
+											<column label="Q1" style="text-align: center" align="right" />
+											<column label="Q2" style="text-align: center" align="right" />
+											<column label="Q3" style="text-align: center" align="right" />
+											<column label="Q4" style="text-align: center" align="right" />
+											<column label="Annual" style="text-align: center" align="right" />
+										</columns>
+										<template name="model">
+											<row>
+												<label value="${each.itemName}" />
+												<label value="@load(each.q1) @converter('formatedNumber', format='$###,##0')" />
+												<label value="@load(each.q2) @converter('formatedNumber', format='$###,##0')" />
+												<label value="@load(each.q3) @converter('formatedNumber', format='$###,##0')" />
+												<label value="@load(each.q4) @converter('formatedNumber', format='$###,##0')" />
+												<label value="@load(each.annual) @converter('formatedNumber', format='$###,##0')" />
+											</row>
+										</template>
+									</grid>
+								</vlayout>
+							</div>
+							<div sclass="printFooter" visible="@load(vm.printView)">
+								<n:div class="signature">
+									Signature:
+								</n:div>
+							</div>
+						</vlayout>
+					</div>
+				</div>
+			</vlayout>
+		</center>
+		<south>
+			<n:div id="footer">
+				<n:div id="footer-inner">
+					<n:div id="footer-contact">
+						<n:a href="#" title="About Us">About Us</n:a> | 
+						<n:a href="#" title="Contact Us">Contact Us</n:a>
+					</n:div>
+					<n:div id="footer-txt">
+						© 2014 Potix Corporation. All rights reserved.
+						ZK is a registered trademark of Potix Corporation.
+					</n:div>
+				</n:div>
+			</n:div>
+		</south>
+	</borderlayout>
+</zk>

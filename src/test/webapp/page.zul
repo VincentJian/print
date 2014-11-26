@@ -1,0 +1,17 @@
+<zk>
+	<window title="Print Whole Page" border="normal">
+		<button label="Print" onClick="org.zkoss.addon.print.PrintUtil.print(grid)" />
+		<grid id="grid">
+			<columns>
+				<column label="Column 1" />
+				<column label="Column 2" />
+			</columns>
+			<rows>
+				<row forEach="1,2,3,4,5">
+					<label value="First Name" />
+					<label value="Last Name" />
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>
