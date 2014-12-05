@@ -1,0 +1,20 @@
+<zk xmlns:n="native">
+	<style src="${param.printStyle}" media="print" />
+	<div sclass="printHeader">
+		<n:div class="logo">
+			Company Logo
+		</n:div>
+		<n:div class="title">
+			$titleName
+		</n:div>
+		<n:div class="text">
+			Report Date: 2014/12/31
+		</n:div>
+	</div>
+	<html content="${param.printContent}" />
+	<div sclass="printFooter">
+		<n:div class="signature">
+			Signature:
+		</n:div>
+	</div>
+</zk>

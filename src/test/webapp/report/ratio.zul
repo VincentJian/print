@@ -1,0 +1,57 @@
+<zk xmlns:n="native">
+	<vlayout
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('org.zkoss.print.RatioVM')">
+		<hlayout>
+			<vlayout hflex="1">
+				<grid>
+					<columns>
+						<column label="Line item" hflex="2" style="text-align: center" />
+						<column label="Beginning of Year" hflex="1" style="text-align: center" align="right" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Inventory" />
+							<label value="$12,500" />
+						</row>
+						<row>
+							<label value="Total assets" />
+							<label value="$120,000" />
+						</row>
+						<row>
+							<label value="Owners' equity" />
+							<label value="$29,000" />
+						</row>
+						<row>
+							<label value="Number of common shares" />
+							<label value="25,000" />
+						</row>
+					</rows>
+				</grid>
+			</vlayout>
+			<charts width="400" height="185" type="pie" title=""
+				model="@load(vm.chartDataModel)" legend="@load(vm.chartLegend)"
+				exporting="@load(vm.chartExporting)" plotOptions="@load(vm.chartOptions)" />
+		</hlayout>
+		<grid model="@load(vm.gridDataModel)">
+			<columns>
+				<column label="Line item" hflex="min" style="text-align: center" />
+				<column label="Q1" style="text-align: center" align="right" />
+				<column label="Q2" style="text-align: center" align="right" />
+				<column label="Q3" style="text-align: center" align="right" />
+				<column label="Q4" style="text-align: center" align="right" />
+				<column label="Annual" style="text-align: center" align="right" />
+			</columns>
+			<template name="model">
+				<row>
+					<label value="${each.itemName}" />
+					<label value="@load(each.q1) @converter('formatedNumber', format='$###,##0')" />
+					<label value="@load(each.q2) @converter('formatedNumber', format='$###,##0')" />
+					<label value="@load(each.q3) @converter('formatedNumber', format='$###,##0')" />
+					<label value="@load(each.q4) @converter('formatedNumber', format='$###,##0')" />
+					<label value="@load(each.annual) @converter('formatedNumber', format='$###,##0')" />
+				</row>
+			</template>
+		</grid>
+	</vlayout>
+</zk>

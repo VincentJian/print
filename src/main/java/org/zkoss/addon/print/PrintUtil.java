@@ -15,7 +15,7 @@ public class PrintUtil {
 	}
 
 	/**
-	 * The specific component to print with custom print CSS style or template ZUL page
+	 * The specific component to print with custom print CSS style
 	 * @param comp any ZK component
 	 * @param cssuri the path to the CSS file
 	 */
@@ -24,7 +24,7 @@ public class PrintUtil {
 	}
 
 	/**
-	 * The specific component to print with custom print CSS style and template ZUL page
+	 * The specific component to print with custom template ZUL page and print CSS style
 	 * @param comp any ZK component
 	 * @param uri the path to the template ZUL page
 	 * @param cssuri the path to the CSS file

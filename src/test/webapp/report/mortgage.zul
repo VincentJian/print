@@ -1,0 +1,41 @@
+<zk xmlns:n="native">
+	<vlayout hflex="1"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('org.zkoss.print.MortgageVM')">
+		<vlayout hflex="1" children="@load(vm.mortgageItems)" spacing="0" sclass="mortgage-items">
+			<template name="children" var="mortgageItem">
+				<div hflex="1" sclass="mortgage-category">
+					<n:span>${mortgageItem.key}</n:span>
+				</div>
+				<vlayout hflex="1" spacing="0" children="@load(mortgageItem.value)">
+					<template name="children" var="item">
+						<hlayout spacing="0">
+							<div hflex="3" sclass="mortgage-item-cell">
+								<n:span>${item.itemName}</n:span>
+							</div>
+							<div hflex="1" sclass="mortgage-item-cell mortgage-item-value">
+								<n:span>${item.value}</n:span>
+							</div>
+						</hlayout>
+					</template>
+				</vlayout>
+			</template>
+		</vlayout>
+		<separator />
+		<grid model="@load(vm.mortgageAanlyses)" oddRowSclass="white" sclass="collapse-table">
+			<columns>
+				<column label="Analysis" sclass="table-header" />
+				<column label="Current" align="right" sclass="table-header" />
+				<column label="Proposed" align="right" sclass="table-header" />
+			</columns>
+			<template name="model" var="each">
+				<row sclass="custom-row">
+					<label value="${each.analysis}" />
+					<label value="${each.current}" />
+					<label value="${each.proposed}" />
+				</row>
+			</template>
+		</grid>
+		<separator />
+	</vlayout>
+</zk>

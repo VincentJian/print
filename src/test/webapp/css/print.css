@@ -1,0 +1,91 @@
+.printHeader,
+.printFooter {
+	line-height: normal;
+	padding-bottom: 5px;
+	display: flex;
+	align-items: flex-end;
+}
+.printHeader *,
+.printFooter * {
+	box-sizing: border-box;
+}
+.printHeader {
+	margin-bottom: 5px;
+	border-bottom: 1px dotted gray;
+}
+.printFooter {
+	margin-top: 5px;
+	border-top: 1px dotted gray;
+}
+.printHeader .logo {
+	width: 200px;
+	height: 60px;
+	border: 1px groove #FDFDFD;
+}
+.printHeader .title {
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+	flex: 1;
+}
+.printHeader .text {
+	width: 200px;
+	text-align: right;
+}
+.printFooter .signature {
+	flex: 1;
+	height: 60px;
+	font-size: 16px;
+}
+
+/* Mortgage Report */
+.mortgage-items {
+	border: 1px solid #DDDDDD;
+	border-bottom: none;
+}
+.mortgage-category {
+	font-family: Arial,Sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	padding: 4px 5px 3px;
+	background-color: #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+.mortgage-item-cell {
+	font-family: Arial,Sans-serif;
+	font-size: 16px;
+	color: #000000;
+	padding: 4px 5px 3px;
+	line-height: 24px;
+	overflow: hidden;
+	border-bottom: 1px solid #DDDDDD;
+}
+.mortgage-item-value {
+	text-align: right;
+}
+.collapse-table {
+	border: 1px solid #DDDDDD;
+}
+.collapse-table table {
+	border-collapse: collapse;
+}
+.table-header {
+	text-align: center !important;
+	background: #DDDDDD;
+	border-left: none;
+	border-bottom: 1px solid #DDDDDD;
+}
+.table-header .z-column-content {
+	color: #000000;
+}
+.custom-row {
+	border-bottom: 1px solid #DDDDDD;
+}
+.custom-row .z-row-inner {
+	border-left: none;
+}
+.custom-row .z-label {
+	font-size: 16px;
+	color: #000000;
+}

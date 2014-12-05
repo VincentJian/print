@@ -21,96 +21,6 @@ body.breeze {
 	width: 63px;
 	height: 85px;
 }
-.header-link {
-	font-family: "Open Sans", Arial, Sans-serif;
-	font-size: 24px;
-	color: #FFFFFF;
-	width: 48px;
-	height: 48px;
-	margin: 18px 0 0 8px;
-	line-height: 48px;
-	text-align: center;
-	float: right;
-	background: #006684;
-	cursor: pointer;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-.header-link a {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-.header-link a:visited {
-	color: #FFFFFF;
-}
-.header-current-link {
-	background: #292A31;
-	cursor: default;
-}
-.container,
-.container-title {
-	width: 960px;
-	margin: 0 auto;
-}
-.container-title {
-	font-family: "Open Sans", Arial, Sans-serif;
-	font-size: 48px;
-	font-weight: 300;
-	color: #D7D7D7;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-.content {
-	margin-right: 20px;
-}
-.download-label {
-	font-size: 12px;
-	font-weight: 600;
-	width: 40%;
-	padding-right: 2px;
-	line-height: 24px;
-	float: left;
-	text-align: right;
-}
-.download-label.checkbox {
-	line-height: 30px;
-	text-align: center;
-}
-.download-input {
-	width: 59%;
-	float: right;
-}
-.download-separator {
-	height: 3px;
-	width: 100%;
-	clear: both;
-}
-.preview-label {
-	width: 40%;
-	padding-right: 2px;
-	line-height: 24px;
-	float: left;
-}
-.checkbox .z-checkbox-content,
-.preview-label .z-checkbox-content {
-	font-family: "Open Sans", Arial, Sans-serif;
-	font-size: 12px;
-	font-weight: 600;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-.preview-input {
-	width: 59%;
-	float: right;
-}
-.tr-label {
-	font-family: "Open Sans", Arial, Sans-serif;
-	font-size: 11px;
-	font-weight: 600;
-	line-height: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 #footer {
 	background-color: #102D35;
 	color: #708286;
@@ -131,46 +41,50 @@ body.breeze {
 	color: #B8C0C3;
 }
 
-.printHeader,
-.printFooter {
-	line-height: normal;
-	padding-bottom: 5px;
-	display: flex;
-	align-items: flex-end;
+/* Mortgage Report */
+.mortgage-items {
+	border: 1px solid #F39C12;
+	border-bottom: none;
 }
-.printHeader *,
-.printFooter * {
-	box-sizing: border-box;
+.mortgage-category {
+	font-family: Arial,Sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	padding: 4px 5px 3px;
+	line-height: 24px;
+	background-color: #F39C12;
+	border-bottom: 1px solid #F39C12;
 }
-.printHeader {
-	border-bottom: 1px dotted gray;
+.mortgage-item-cell {
+	font-family: Arial,Sans-serif;
+	font-size: 12px;
+	color: #636363;
+	padding: 4px 5px 3px;
+	line-height: 24px;
+	overflow: hidden;
+	border-bottom: 1px solid #F39C12;
 }
-.printFooter {
-	border-top: 1px dotted gray;
-}
-.printHeader .logo {
-	width: 200px;
-	height: 60px;
-	border: 1px groove #FDFDFD;
-}
-.printHeader .title {
-	font-size: 24px;
-	font-weight: 600;
-	text-align: center;
-	flex: 1;
-}
-.printHeader .text {
-	width: 200px;
+.mortgage-item-value {
 	text-align: right;
 }
-.printHeader .separator {
-	clear: both;
-	padding-top: 5px;
-	border: none;
-	border-bottom: 1px dotted gray;
+.collapse-table {
+	border: 1px solid #F39C12;
 }
-.printFooter .signature {
-	flex: 1;
-	height: 60px;
-	font-size: 16px;
+.collapse-table table {
+	border-collapse: collapse;
+}
+.table-header {
+	text-align: center !important;
+	background: #F39C12;
+	border-left: none;
+	border-bottom: 1px solid #F39C12;
+}
+.table-header .z-column-content {
+	color: #FFFFFF;
+}
+.custom-row {
+	border-bottom: 1px solid #F39C12;
+}
+.custom-row .z-row-inner {
+	border-left: none;
 }
