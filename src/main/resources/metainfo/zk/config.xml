@@ -6,6 +6,6 @@
 
 	<version>
 		<version-class>org.zkoss.addon.print.Version</version-class>
-		<version-uid>0.8.0</version-uid>
+		<version-uid>0.8.1</version-uid>
 	</version>
 </config>
