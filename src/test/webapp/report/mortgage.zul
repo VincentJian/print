@@ -1,10 +1,12 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
 <zk xmlns:n="native">
-	<vlayout hflex="1"
+	<vlayout id="v" hflex="1"
 		apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm') @init('org.zkoss.print.MortgageVM')">
 		<vlayout hflex="1" children="@load(vm.mortgageItems)" spacing="0" sclass="mortgage-items">
 			<template name="children" var="mortgageItem">
 				<div hflex="1" sclass="mortgage-category">
+					<image src="images/icon${c:substring(mortgageItem.key, 0, 1)}.gif" />
 					<n:span>${mortgageItem.key}</n:span>
 				</div>
 				<vlayout hflex="1" spacing="0" children="@load(mortgageItem.value)">
